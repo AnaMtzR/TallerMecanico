@@ -1,38 +1,16 @@
 @extends('templates.master')
 @section('contenido_central')
- <div class="hero-wrap">
-	    <div class="home-slider owl-carousel">
-	      <div class="slider-item" style="background-image:url('{!! asset('estilo/images/bg_1.jpg') !!}');">
-	      	<div class="overlay"></div>
-	        <div class="container">
-	          <div class="row no-gutters slider-text align-items-center justify-content-start">
-		          <div class="col-md-6 ftco-animate">
-		          	<div class="text w-100">
-		          		<h2>Somos los mejores en reparaciones</h2>
-			            <h1 class="mb-4">Haz que tu coche dure más</h1>
-			            <p><a href="#" class="btn btn-primary">Hacer una cita al taller</a></p>
-		            </div>
-		          </div>
-		        </div>
-	        </div>
-	      </div>
-
-	      <div class="slider-item" style="background-image:url('{!! asset('estilo/images/bg_2.jpg') !!}');">
-	      	<div class="overlay"></div>
-	        <div class="container">
-	          <div class="row no-gutters slider-text align-items-center justify-content-start">
-		          <div class="col-md-6 ftco-animate">
-		          	<div class="text w-100">
-		          		<h2>Nos interesa tu auto</h2>
-			            <h1 class="mb-4">Es hora de venir a reparar tu auto</h1>
-			            <p><a href="#" class="btn btn-primary">Hacer una cita al taller</a></p>
-		            </div>
-		          </div>
-		        </div>
-	        </div>
-	      </div>
-	    </div>
-	  </div>
+<section class="hero-wrap hero-wrap-2" style="background-image: url('{!! asset('estilo/images/work-6.jpg') !!}');" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-end">
+          <div class="col-md-9 ftco-animate pb-5">
+          	<p class="breadcrumbs mb-2"><span class="mr-2"><a href="index.html">Inicio <i class="fa fa-chevron-right"></i></a></span> <span>Reservas <i class="fa fa-chevron-right"></i></span></p>
+            <h1 class="mb-0 bread">Reservar</h1>
+          </div>
+        </div>
+      </div>
+    </section>
 @endsection()
 @section('contenido_central2')
 <section class="ftco-section">
@@ -50,8 +28,7 @@
               </div>
               <div class="media-body pl-3">
                 <h3 class="heading">Cambio de aceite</h3>
-                <p>Cambio de lo mejores aceites.... </p>
-                <p><a href="servicios" class="btn-custom">Saber más</a></p>
+                <p>Cambio de lo mejores aceites.... </p>s
               </div>
             </div>
             <div class="d-block d-flex">
@@ -61,7 +38,6 @@
               <div class="media-body pl-3">
                 <h3 class="heading">Cambio de llanta</h3>
                 <p>Buscas un cambio de llantas rápido y accesible...</p>
-                <p><a href="servicios" class="btn-custom">Saber más</a></p>
               </div>
             </div> 
 
@@ -74,7 +50,6 @@
               <div class="media-body pl-3">
                 <h3 class="heading">Baterías</h3>
                 <p>Te has quedado sin una batería aquí tenemos... </p>
-                <p><a href="servicios" class="btn-custom">Saber más</a></p>
               </div>
             </div> 
             
@@ -85,15 +60,12 @@
               <div class="media-body pl-3">
                 <h3 class="heading">Mantenimiento del auto</h3>
                 <p>El mejor mantenimiento se lo damos a tu coche...</p>
-                <p><a href="servicios" class="btn-custom">Saber más</a></p>
               </div>
             </div>       
           </div>
         </div>
     </div>
 </section>
-
-
 @endsection()
 @section('contenido_central3')
 <section class="ftco-appointment ftco-section ftco-no-pt ftco-no-pb img" style="background-image: url('{!! asset('estilo/images/bg_3.jpg') !!}');">

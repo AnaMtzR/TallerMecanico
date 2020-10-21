@@ -6,16 +6,18 @@
           </button>
                 <form action="#" class="searchform order-lg-last">
           <div class="form-group d-flex">
-            <input type="text" class="form-control pl-3" placeholder="Search">
+            <input type="text" class="form-control pl-3" placeholder="Buscar">
             <button type="submit" placeholder="" class="form-control search"><span class="fa fa-search"></span></button>
           </div>
+          
         </form>
           <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active"><a href="index.html" class="nav-link">Inicio</a></li>
-                <li class="nav-item"><a href="services.html" class="nav-link">Servicios</a></li>
-                <li class="nav-item"><a href="blog.html" class="nav-link">Reservas</a></li>
-              <li class="nav-item"><a href="contact.html" class="nav-link">Contacto</a></li>
+                <li class="nav-item active"><a href="inicio" class="nav-link">Inicio</a></li>
+                <li class="nav-item"><a href="servicios" class="nav-link">Servicios</a></li>
+                <li class="nav-item"><a href="reservas" class="nav-link">Reservas</a></li>
+              <li class="nav-item"><a href="contacto" class="nav-link">Contacto</a></li>
+              <li class="nav-item"><a href="sesion" class="nav-link">Iniciar sesión <span class="fa fa-user-o"></span></a></li>
             </ul>
           </div>
         </div>

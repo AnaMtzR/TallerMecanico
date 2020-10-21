@@ -21,3 +21,25 @@ Route::get('w', function () {
 Route::get('/', function () {
     return view('inicio');
 });
+Route::get('inicio', function () {
+    return view('inicio');
+});
+
+Route::get('servicios', function () {
+    return view('servicios');
+});
+
+
+Route::get('contacto', function () {
+    return view('contacto');
+});
+
+
+Route::get('reservas', function () {
+    return view('reservas');
+});
+
+
+Route::get('sesion', function () {
+    return view('sesion');
+});

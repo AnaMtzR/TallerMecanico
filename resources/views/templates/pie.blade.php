@@ -41,8 +41,8 @@
               <ul class="list-unstyled">
                 <li><a href="#" class="py-1 d-block"><span class="fa fa-check mr-3"></span>Cambio de Aceite</a></li>
                 <li><a href="#" class="py-1 d-block"><span class="fa fa-check mr-3"></span>Baterías</a></li>
-                <li><a href="#" class="py-1 d-block"><span class="fa fa-check mr-3"></span>Tire Change</a></li>
-                <li><a href="#" class="py-1 d-block"><span class="fa fa-check mr-3"></span>Engine Repair</a></li>
+                <li><a href="#" class="py-1 d-block"><span class="fa fa-check mr-3"></span>Cambio de llantas</a></li>
+                <li><a href="#" class="py-1 d-block"><span class="fa fa-check mr-3"></span>Mantenimiento del auto</a></li>
               </ul>
             </div>
           </div>
@@ -53,7 +53,7 @@
 	              <ul>
 	                <li><span class="icon fa fa-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
 	                <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-	                <li><a href="#"><span class="icon fa fa-paper-plane"></span><span class="text">info@yourdomain.com</span></a></li>
+	                <li><a href="#"><span class="icon fa fa-paper-plane"></span><span class="text">halconm26@gmail.com</span></a></li>
 	              </ul>
 	            </div>
             </div>
@@ -65,12 +65,12 @@
               	<h4>Días abierto:</h4>
               	<p class="pl-3">
               		<span>Lunes – Viernes : 9am a 20 pm</span>
-              		<span>Sabdo : 9am a 17 pm</span>
+              		<span>Sabádo : 9am a 17 pm</span>
               	</p>
               	<h4>Vacaciones:</h4>
               	<p class="pl-3">
               		<span>Domingos</span>
-              		<span>Días festivos</span>
+              		<span>,Días festivos</span>
               	</p>
               </div>
             </div>
