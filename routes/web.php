@@ -32,6 +32,12 @@ Route::get('servicios', function () {
 
 
 Route::get('contacto', function () {
+    if (true) {
+        # code...
+    } else {
+        # code...
+    }
+    
     return view('contacto');
 });
 
@@ -44,3 +50,12 @@ Route::get('reservas', function () {
 Route::get('sesion', function () {
     return view('sesion');
 });
+
+
+/*
+|--------------------------------------------------------------------------
+| Resources Controllers para tablas de CRUD's
+|--------------------------------------------------------------------------
+*/
+
+Route::resource('users','Users_Controller');

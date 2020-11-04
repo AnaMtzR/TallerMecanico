@@ -1,6 +1,6 @@
 @extends('templates.master')
 @section('contenido_central')
- <div class="hero-wrap">
+<div class="hero-wrap">
 	    <div class="home-slider owl-carousel">
 	      <div class="slider-item" style="background-image:url('{!! asset('estilo/images/bg_2.jpg') !!}');">
 	      	<div class="overlay"></div>
@@ -28,7 +28,7 @@
 			            <p><a href="#" class="btn btn-primary">Hacer una cita al taller</a></p>
 		            </div>
 		          </div>
-		        </div>
+				</div>
 	        </div>
 	      </div>
 	    </div>

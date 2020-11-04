@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class TiposServiciosTable extends Migration
+class CreateFotosServicioTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class TiposServiciosTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipos_servicios', function (Blueprint $table) {
+        Schema::create('fotos_servicio', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre', 25);
-            $table->string('descripcion', 500);
-            $table->double('precio', 9, 2);
-            $table->int('status', 1);
+            $table->unsignedBigInteger('id_servicio');
+            $table->string('ruta');
+            $table->integer('status');
             $table->timestamps();
+            $table->foreign('id_servicio')->references('id')->on('tipos_servicios');
         });
     }
 
@@ -30,6 +30,6 @@ class TiposServiciosTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('fotos_servicio');
     }
 }
