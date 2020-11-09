@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Comentarios;
+use App\User;
+use App\Users;
 
 class Comentarios_Controller extends Controller
 {
@@ -13,7 +16,11 @@ class Comentarios_Controller extends Controller
      */
     public function index()
     {
-        //
+        $comentarios = Comentarios::where('status', 1)
+            ->orderBy('fecha')->get();
+
+        return view('comentarios.index')
+            ->with('comentarios', $comentarios);
     }
 
     /**
@@ -23,7 +30,11 @@ class Comentarios_Controller extends Controller
      */
     public function create()
     {
-        //
+        $users = Users::select('id', 'nombre')
+            ->orderBy('nombre')->get();
+
+        return view('comentarios.create')
+            ->with('users', $users);
     }
 
     /**
@@ -34,7 +45,10 @@ class Comentarios_Controller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $datos = $request->all();
+        Comentarios::create($datos);
+
+        return redirect('/comentarios');
     }
 
     /**
@@ -45,7 +59,9 @@ class Comentarios_Controller extends Controller
      */
     public function show($id)
     {
-        //
+        $comentarios = Comentarios::find($id);
+        return view('comentarios.read')
+            ->with('comentarios', $comentarios);
     }
 
     /**
@@ -56,7 +72,11 @@ class Comentarios_Controller extends Controller
      */
     public function edit($id)
     {
-        //
+        $users = Users::select('id', 'nombre')
+            ->orderBy('nombre')->get();
+
+        return view('comentarios.edit')
+            ->with('users', $users);
     }
 
     /**
@@ -68,7 +88,10 @@ class Comentarios_Controller extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $datos = $request->all();
+        $comentarios = Comentarios::find($id);
+        $comentarios->update($datos);
+        return redirect('/comentarios');
     }
 
     /**
@@ -79,6 +102,10 @@ class Comentarios_Controller extends Controller
      */
     public function destroy($id)
     {
-        //
+        $comentarios = Comentarios::find($id);
+        $comentarios->status = 0;
+        $comentarios->save();
+
+        return redirect('/comentarios');
     }
 }

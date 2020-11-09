@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Tipos_usuario;
 use Illuminate\Http\Request;
 
 class Tipos_usuario_Controller extends Controller
@@ -13,7 +14,11 @@ class Tipos_usuario_Controller extends Controller
      */
     public function index()
     {
-        //
+        $tp_usuario = tipos_usuario::where('status', 1)
+            ->orderBy('nombre')->get();
+
+        return view('tipos_usuario.index')
+            ->with('tipos_usuario', $tp_usuario);
     }
 
     /**
@@ -23,18 +28,21 @@ class Tipos_usuario_Controller extends Controller
      */
     public function create()
     {
-        //
+        return view('tipos_usuario.create');
     }
 
     /**
      * Store a newly created resource in storage.
-     *
+     *     
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        $datos = $request->all();
+        tipos_usuario::create($datos);
+
+        return redirect('/tipos_usuario');
     }
 
     /**
@@ -45,7 +53,10 @@ class Tipos_usuario_Controller extends Controller
      */
     public function show($id)
     {
-        //
+        $tp_usuario = tipos_usuario::find($id);
+
+        return view('tipos_usuario.read')
+            ->with('tipos_usuario', $tp_usuario);
     }
 
     /**
@@ -56,7 +67,10 @@ class Tipos_usuario_Controller extends Controller
      */
     public function edit($id)
     {
-        //
+        $tp_usuario = tipos_usuario::find($id);
+
+        return view('tipos_usuario.edit')
+            ->with('tipos_usuario', $tp_usuario);
     }
 
     /**
@@ -68,7 +82,11 @@ class Tipos_usuario_Controller extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $datos = $request->all();
+        $tp_usuario = tipos_usuario::find($id);
+        $tp_usuario->update($datos);
+
+        return redirect('/tipos_usuario');
     }
 
     /**
@@ -79,6 +97,10 @@ class Tipos_usuario_Controller extends Controller
      */
     public function destroy($id)
     {
-        //
+        $tp_usuario = tipos_usuario::find($id);
+        $tp_usuario->status = 0;
+        $tp_usuario->save();
+
+        return redirect('/tipos_usuario');
     }
 }

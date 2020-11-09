@@ -37,7 +37,7 @@ Route::get('contacto', function () {
     } else {
         # code...
     }
-    
+
     return view('contacto');
 });
 
@@ -57,5 +57,15 @@ Route::get('sesion', function () {
 | Resources Controllers para tablas de CRUD's
 |--------------------------------------------------------------------------
 */
-
-Route::resource('users','Users_Controller');
+Route::resource('comentarios', 'Comentarios_Controller');
+Route::resource('cotizaciones', 'Cotizaciones_Controller');
+Route::resource('entidades', 'Entidades_Controller');
+Route::resource('fotos_servicio', 'Fotos_servicio_Controller');
+Route::resource('municipios', 'Municipios_Controller');
+Route::resource('reservas_servicio', 'Reservas_servicio_Controller');
+Route::resource('tarjetas_cliente', 'Tarjetas_cliente_Controller');
+Route::resource('tipos_servicios', 'Tipos_servicios_Controller');
+Route::resource('tipos_usuario', 'Tipos_usuario_Controller');
+Route::resource('tipos_banco', 'Tipos_banco_Controller');
+Route::resource('tipos_consorcio', 'Tipos_consorcio_Controller');
+Route::resource('users', 'Users_Controller');

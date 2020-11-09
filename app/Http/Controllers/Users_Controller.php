@@ -18,7 +18,8 @@ class Users_Controller extends Controller
     public function index()
     {
         $users = Users::where('status', 1)
-            ->orderBy('ape_paterno')->get();;
+            ->orderBy('ape_paterno')->get();
+
         return view('users.index')
             ->with('users', $users);
     }
@@ -36,6 +37,7 @@ class Users_Controller extends Controller
             ->orderBy('nombre')->get();
         $municipios = Municipios::select('id', 'nombre')
             ->orderBy('nombre')->get();
+
         return view('users.create')
             ->with('tipo_usuario', $tipo_usuario)
             ->with('entidades', $entidades)
@@ -52,6 +54,7 @@ class Users_Controller extends Controller
     {
         $datos = $request->all();
         Users::create($datos);
+
         return redirect('/users');
     }
 
@@ -64,6 +67,7 @@ class Users_Controller extends Controller
     public function show($id)
     {
         $users = users::find($id);
+
         return view('users.read')->with('users', $users);
     }
 
@@ -83,6 +87,7 @@ class Users_Controller extends Controller
             ->orderBy('nombre')->get();
         $municipios = municipios::select('id', 'nombre')
             ->orderBy('nombre')->get();
+
         return view('users.edit')
             ->with('users', $users)
             ->with('tipo_usuario', $tipo_usuario)
@@ -102,6 +107,7 @@ class Users_Controller extends Controller
         $datos = $request->all();
         $users = Users::find($id);
         $users->update($datos);
+
         return redirect('/users');
     }
 
@@ -116,6 +122,7 @@ class Users_Controller extends Controller
         $users = users::find($id);
         $users->status = 0;
         $users->save();
+
         return redirect('/users');
     }
 }
