@@ -1,8 +1,8 @@
 @extends('templates.master')
 @section('contenido_central')
- <div class="hero-wrap">
+<div class="hero-wrap">
 	    <div class="home-slider owl-carousel">
-	      <div class="slider-item" style="background-image:url('{!! asset('estilo/images/bg_1.jpg') !!}');">
+	      <div class="slider-item" style="background-image:url('{!! asset('estilo/images/bg_2.jpg') !!}');">
 	      	<div class="overlay"></div>
 	        <div class="container">
 	          <div class="row no-gutters slider-text align-items-center justify-content-start">
@@ -17,18 +17,18 @@
 	        </div>
 	      </div>
 
-	      <div class="slider-item" style="background-image:url('{!! asset('estilo/images/bg_2.jpg') !!}');">
+	      <div class="slider-item" style="background-image:url('{!! asset('estilo/images/taller_banner2.jpg') !!}');">
 	      	<div class="overlay"></div>
 	        <div class="container">
 	          <div class="row no-gutters slider-text align-items-center justify-content-start">
 		          <div class="col-md-6 ftco-animate">
 		          	<div class="text w-100">
-		          		<h2>Nos interesa tu auto</h2>
-			            <h1 class="mb-4">Es hora de venir a reparar tu auto</h1>
+		          		<h2>Nos interesa tu vehículo</h2>
+			            <h1 class="mb-4">¡Ven a reparar tu auto con nosotros!</h1>
 			            <p><a href="#" class="btn btn-primary">Hacer una cita al taller</a></p>
 		            </div>
 		          </div>
-		        </div>
+				</div>
 	        </div>
 	      </div>
 	    </div>
@@ -39,7 +39,7 @@
 <div class="container">
     		<div class="row justify-content-center pb-5 mb-3">
           <div class="col-md-7 heading-section text-center ftco-animate">
-            <h2>Ofrecemos los servicios</h2>
+            <h2>Servicios que ofrecemos:  </h2>
           </div>
         </div>
     		<div  class="row"  >

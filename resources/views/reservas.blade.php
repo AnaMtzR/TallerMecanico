@@ -13,8 +13,8 @@
     </section>
 @endsection()
 @section('contenido_central2')
-<section class="ftco-section">
-<div class="container">
+<section class="ftco-section"> 
+<div class="container"> 
     		<div class="row justify-content-center pb-5 mb-3">
           <div class="col-md-7 heading-section text-center ftco-animate">
             <h2>Ofrecemos los servicios</h2>
@@ -133,7 +133,7 @@
     			</div>
     		</div>
     	</div>
-    </section>
+	</section>
 
 
 @endsection()
