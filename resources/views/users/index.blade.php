@@ -1,7 +1,11 @@
 @extends('templates.master')
 @section('contenido_central')
+<h1 align="center">Usuarios</h1>
+@endsection()
+@section('contenido_central2')  
 
-<table align="center"  cellpadding="15" cellspacing="5px" style="max-width:100%" >
+
+<table align="center"  cellpadding="15" cellspacing="5px" style="max-width:90%" >
 		
     <tr>
         <th>Tipo de usuario</th>
@@ -15,8 +19,6 @@
         <th>CP</th>
         <th>Username</th>
         <th>Correo</th>
-        <th>PSW</th>
-        <th>Status</th>
         <th align="center">Acciones</th>
     </tr>
 
@@ -33,12 +35,20 @@
         <td>{!! $users->cp !!}</td>
         <td>{!! $users->username !!}</td>
         <td>{!! $users->correo !!}</td>
-        <td>{!! $users->psw !!}</td>	
-        <td>{!! $users->status !!}</td>
+       <td align="center">
+                <a class="btn btn-primary" href="{!! 'users/'.$users->id !!}">Detalle</a>
+                <a class="btn btn-sm btn-primary" href="{!! 'users/'.$users->id.'/edit' !!}">Editar</a>
+              {!! Form::open (['method'=>'DELETE','url'=>'/users/'.$users->id]) !!} 
+                {!! Form::submit('Eliminar', ['class'=>'btn btn-primary ']) !!}  
+                {!! Form::close() !!}
+            </td>
         
     </tr>
     @endforeach
 </table>
-
+<div align="center">
+                <a href="users/create" class="btn"> Agregar Usuario</a>
+                <a href="cruds" class="btn">Regresar</a>
+        </div>
 
 @endsection()

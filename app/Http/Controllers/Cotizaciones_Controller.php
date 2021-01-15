@@ -16,7 +16,7 @@ class Cotizaciones_Controller extends Controller
     public function index()
     {
         $cotizaciones = Cotizaciones::where('status', 1)
-            ->orderBy('nombre')->get();
+            ->orderBy('fecha_inicio')->get();
 
         return view('cotizaciones.index')
             ->with('cotizaciones', $cotizaciones);
@@ -71,11 +71,14 @@ class Cotizaciones_Controller extends Controller
      */
     public function edit($id)
     {
+        $cotizaciones=cotizaciones::find($id);
         $servicios = Tipos_servicios::select('id', 'nombre')
             ->orderBy('nombre')->get();
 
-        return view('cotizaciones.create')
-            ->with('servicios', $servicios);
+        return view('cotizaciones.edit')
+            ->with('cotizaciones', $cotizaciones)
+             ->with('servicios', $servicios);
+
     }
 
     /**
@@ -90,7 +93,7 @@ class Cotizaciones_Controller extends Controller
         $datos = $request->all();
         $cotizaciones = Cotizaciones::find($id);
         $cotizaciones->update($datos);
-        return redirect('/cotiz$cotizaciones');
+        return redirect('/cotizaciones');
     }
 
     /**

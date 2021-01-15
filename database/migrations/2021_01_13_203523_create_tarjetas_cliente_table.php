@@ -15,6 +15,7 @@ class CreateTarjetasClienteTable extends Migration
     {
         Schema::create('tarjetas_cliente', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('id_usuario');
             $table->unsignedBigInteger('id_banco');
             $table->unsignedBigInteger('id_consorcio');
             $table->integer('no_tarjeta');
@@ -23,6 +24,7 @@ class CreateTarjetasClienteTable extends Migration
             $table->integer('anio');
             $table->integer('status');
             $table->timestamps();
+            $table->foreign('id_usuario')->references('id')->on('users');
             $table->foreign('id_banco')->references('id')->on('tipos_banco');
             $table->foreign('id_consorcio')->references('id')->on('tipos_consorcio');
         });

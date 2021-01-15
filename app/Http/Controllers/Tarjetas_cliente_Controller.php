@@ -35,7 +35,7 @@ class Tarjetas_cliente_Controller extends Controller
             ->orderBy('nombre')->get();
         $tipos_consorcio = tipos_consorcio::select('id', 'nombre')
             ->orderBy('nombre')->get();
-        $users = users::select('id', 'nombre')
+        $users = users::select('id', 'username')
             ->orderBy('correo')->get();
 
         return view('tarjetas_cliente.create')
@@ -67,8 +67,11 @@ class Tarjetas_cliente_Controller extends Controller
     public function show($id)
     {
         $tarjetas_cliente = tarjetas_cliente::find($id);
+        $users = users::select('id', 'username')
+            ->orderBy('correo')->get();
         return view('tarjetas_cliente.read')
-            ->with('tarjetas_cliente', $tarjetas_cliente);
+            ->with('tarjetas_cliente', $tarjetas_cliente)
+            ->with('users', $users);
     }
 
     /**
