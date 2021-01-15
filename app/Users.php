@@ -14,7 +14,6 @@ class Users extends Model
         'ape_materno',
         'edad',
         'genero',
-        'id_tarjeta',
         'id_tipo_usuario',
         'id_entidad',
         'id_municipio',

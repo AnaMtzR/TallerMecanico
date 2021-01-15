@@ -16,6 +16,10 @@
     <link rel="stylesheet" href="{!! asset('estilo/css/jquery.timepicker.css') !!}">
     <link rel="stylesheet" href="{!! asset('estilo/css/flaticon.css') !!}">
     <link rel="stylesheet" href="{!! asset('estilo/css/style.css') !!}">
+    <link rel="stylesheet" href="{!! asset('estilo/css/jquery.dataTables.min.css') !!}">
+
+
+
 </head>
 <body>
 

@@ -12,7 +12,7 @@ class Fotos_servicio_Controller extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
-     */
+     */ 
     public function index()
     {
 
@@ -30,8 +30,8 @@ class Fotos_servicio_Controller extends Controller
      */
     public function create()
     {
-        $servicios = Tipos_servicios::select('id', 'no_habitacion')
-            ->orderBy('no_habitacion')->get();
+        $servicios = Tipos_servicios::select('id', 'nombre')
+            ->orderBy('nombre')->get();
 
         return view('fotos_servicio.create')
             ->with('servicios', $servicios);
@@ -72,7 +72,7 @@ class Fotos_servicio_Controller extends Controller
     {
         $fotos_servicio = Fotos_servicio::find($id);
         $servicios = Tipos_servicios::select('id', 'nombre')
-            ->orderBy('no_habitacion')->get();
+            ->orderBy('nombre')->get();
 
         return view('fotos_servicio.edit')
             ->with('fotos_servicio', $fotos_servicio)
