@@ -16,7 +16,7 @@
 		        </div>
 	        </div>
 	      </div>
-
+asdfjhasdfjksadf
 	      <div class="slider-item" style="background-image:url('{!! asset('estilo/images/taller_banner2.jpg') !!}');">
 	      	<div class="overlay"></div>
 	        <div class="container">
