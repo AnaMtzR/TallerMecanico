@@ -29,6 +29,9 @@ Route::get('inicio', function () {
 Route::get('servicios', function () {
     return view('servicios');
 });
+Route::get('cruds', function () {
+    return view('cruds');
+});
 
 
 Route::get('contacto', function () {

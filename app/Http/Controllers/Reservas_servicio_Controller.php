@@ -67,6 +67,7 @@ class Reservas_servicio_Controller extends Controller
     public function show($id)
     {
         $reservas_servicio = reservas_servicio::find($id);
+        
         return view('reservas_servicio.read')
             ->with('reservas_servicio', $reservas_servicio);
     }

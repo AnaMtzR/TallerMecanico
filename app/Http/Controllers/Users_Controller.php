@@ -18,7 +18,7 @@ class Users_Controller extends Controller
     public function index()
     {
         $users = Users::where('status', 1)
-            ->orderBy('ape_paterno')->get();
+            ->orderBy('id_tipo_usuario')->get();
 
         return view('users.index')
             ->with('users', $users);

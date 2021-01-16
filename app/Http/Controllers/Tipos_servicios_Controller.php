@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\tipos_servicios;
 use Illuminate\Http\Request;
 
-class tipos_servicioss_Controller extends Controller
+class tipos_servicios_Controller extends Controller
 {
     /**
      * Display a listing of the resource.

@@ -20,7 +20,6 @@ class CreateUsersTable extends Migration
             $table->string('ape_materno');
             $table->integer('edad');
             $table->char('genero');
-            $table->unsignedBigInteger('id_tarjeta');
             $table->unsignedBigInteger('id_tipo_usuario');
             $table->unsignedBigInteger('id_entidad');
             $table->unsignedBigInteger('id_municipio');
@@ -32,7 +31,7 @@ class CreateUsersTable extends Migration
             $table->string('psw');
             $table->integer('status');
             $table->timestamps();
-            $table->foreign('id_tarjeta')->references('id')->on('tarjetas_cliente');
+            
             $table->foreign('id_tipo_usuario')->references('id')->on('tipos_usuario');
             $table->foreign('id_entidad')->references('id')->on('entidades');
             $table->foreign('id_municipio')->references('id')->on('municipios');
@@ -49,3 +48,4 @@ class CreateUsersTable extends Migration
         Schema::dropIfExists('users');
     }
 }
+

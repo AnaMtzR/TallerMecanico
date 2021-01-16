@@ -30,7 +30,7 @@ class Comentarios_Controller extends Controller
      */
     public function create()
     {
-        $users = Users::select('id', 'nombre')
+        $users = Users::select('id', 'correo')
             ->orderBy('nombre')->get();
 
         return view('comentarios.create')
@@ -72,10 +72,12 @@ class Comentarios_Controller extends Controller
      */
     public function edit($id)
     {
-        $users = Users::select('id', 'nombre')
+        $comentarios = Comentarios::find($id);
+        $users = Users::select('id', 'correo')
             ->orderBy('nombre')->get();
 
         return view('comentarios.edit')
+            ->with('comentarios', $comentarios)
             ->with('users', $users);
     }
 

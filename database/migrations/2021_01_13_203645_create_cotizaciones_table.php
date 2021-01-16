@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -35,3 +36,5 @@ class CreateCotizacionesTable extends Migration
         Schema::dropIfExists('cotizaciones');
     }
 }
+
+
