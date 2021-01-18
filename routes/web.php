@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Entidades;
+use App\Municipios;
+use App\Tipos_usuario;
+use App\Users;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,7 +55,29 @@ Route::get('reservas', function () {
 
 
 Route::get('sesion', function () {
-    return view('sesion');
+    $tipo_usuario = Tipos_usuario::select('id', 'nombre')
+        ->orderBy('nombre')->get();
+    $entidades = Entidades::select('id', 'nombre')
+        ->orderBy('nombre')->get();
+    $municipios = Municipios::select('id', 'nombre')
+        ->orderBy('nombre')->get();
+    return view('sesion')
+        ->with('tipo_usuario', $tipo_usuario)
+        ->with('entidades', $entidades)
+        ->with('municipios', $municipios);;
+});
+
+Route::get('registro', function () {
+    $tipo_usuario = Tipos_usuario::select('id', 'nombre')
+        ->orderBy('nombre')->get();
+    $entidades = Entidades::select('id', 'nombre')
+        ->orderBy('nombre')->get();
+    $municipios = Municipios::select('id', 'nombre')
+        ->orderBy('nombre')->get();
+    return view('registro')
+        ->with('tipo_usuario', $tipo_usuario)
+        ->with('entidades', $entidades)
+        ->with('municipios', $municipios);;
 });
 
 
