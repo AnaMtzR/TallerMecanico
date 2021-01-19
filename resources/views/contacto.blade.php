@@ -25,7 +25,7 @@
                     <div class="col-md-12 d-flex">
                         <div class="contact-wrap w-100 p-md-5 p-4">
                             <h3 class="mb-4">Ingresa tus datos </h3>
-                            <form method="POST" id="contactForm" class="contactForm">
+                            <form method="GET" id="contactForm" class="contactForm">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
@@ -61,6 +61,9 @@
                             </form>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
     </section>
 @endsection()
 @section('contenido_central3')

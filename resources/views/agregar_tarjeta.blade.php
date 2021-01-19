@@ -10,9 +10,13 @@
     <table align="center" width="auto">
         <tr>
             <td width="400px">
-                {!! Form::label('id_usuario', 'Usuario') !!}
-                {!! Form::select('id_usuario', $users->pluck('username', 'id')->all(), null, ['placeholder' => 'Seleccionar
-                usuario ...', 'class' => 'form-control']) !!}
+                {!! Form::label('name', 'Nombre del propietario') !!}
+                {!! Form::text('name', $usuario->nombre . ' ' . $usuario->ape_paterno . ' ' . $usuario->ape_materno,
+                ['placeholder' => 'Nombre del propietario', 'class' => 'form-control', 'disabled']) !!}
+
+                {!! Form::label('id_usuario', 'Usuario', 'hidden') !!}
+                {!! Form::number('id_usuario', $usuario->id, ['placeholder' => 'Nombre del propietario', 'class' =>
+                'form-control', 'hidden']) !!}
 
                 {!! Form::label('no_tarjeta', 'No de Tarjeta') !!}
                 {!! Form::number('no_tarjeta', null, ['placeholder' => 'Ingresa tu numero de tarjeta', 'class' =>
@@ -26,10 +30,6 @@
                 '6' => 'Junio', '7' => 'Julio', '8' => 'Agosto', '9' => 'Septiembre', '10' => 'Octubre', '11' =>
                 'Noviembre', '12' => 'Diciembre'], 'null', ['placeholder' => 'Selecciona un mes', 'class' =>
                 'form-control']) !!}
-
-
-
-
             </td>
             <td block></td>
             <td width="400px">
@@ -45,21 +45,24 @@
                 'Seleccionar ...', 'class' => 'form-control']) !!}
 
                 {!! Form::label('status', 'Estatus', 'hidden') !!}
-                {!! Form::select('status', ['1' => 'Activo', '0' => 'Baja'], '1', ['placeholder' => 'Selecciona estatus de
-                la tarjeta', 'class' => 'form-control', 'hidden']) !!}
-
-
+                {!! Form::select('status', ['1' => 'Activo', '0' => 'Baja'], '1', [
+                'placeholder' => 'Selecciona estatus de
+                la tarjeta',
+                'class' => 'form-control',
+                'hidden',
+                ]) !!}
             </td>
         </tr>
     </table>
     <br>
     <div align="center">
-        {!! Form::submit('Agregar', ['class' => 'btn ']) !!}
+        {!! Form::submit('Agregar', ['class' => 'btn btn-primary']) !!}
         {!! Form::close() !!}
 
         <a class="btn" href="{!!  asset('tarjetas_cliente') !!}">Regresar</a>
 
     </div>
+    <br />
 
 @endsection()
 @section('contenido_central3')

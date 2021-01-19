@@ -41,7 +41,7 @@
             <td>
 
                 {!! Form::label('edad', 'Edad') !!}<br>
-                {!! Form::number('edad', '18', ['placeholder' => 'Ingresa tu edad', 'class' => 'form-control', 'required'])
+                {!! Form::number('edad', null, ['placeholder' => 'Ingresa tu edad', 'class' => 'form-control', 'required'])
                 !!}
             </td>
             <td>
@@ -122,7 +122,7 @@
         <tr>
             <td colspan="2">
                 {!! Form::label('id_tipo_usuario', 'Tipo usuario', 'hidden') !!} <br>
-                {!! Form::select('id_tipo_usuario', $tipo_usuario->pluck('nombre', 'id')->all(), 1, ['placeholder' =>
+                {!! Form::select('id_tipo_usuario', $tipo_usuario->pluck('nombre', 'id')->all(), 3, ['placeholder' =>
                 'Seleccionar ...', 'class' => 'form-control', 'required', 'hidden']) !!}
             </td>
         </tr>
@@ -133,7 +133,7 @@
     <br />
     <br />
     <div align="center">
-        {!! Form::submit('Agregar', ['class' => 'btn ']) !!}
+        {!! Form::submit('Crear cuenta', ['class' => 'btn ']) !!}
         {!! Form::close() !!}
     </div>
     <br />

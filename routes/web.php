@@ -1,9 +1,14 @@
 <?php
 
+use App\Cotizaciones;
 use Illuminate\Support\Facades\Route;
 use App\Entidades;
 use App\Municipios;
+use App\Tarjetas_cliente;
+use App\Tipos_banco;
+use App\Tipos_consorcio;
 use App\Tipos_usuario;
+use App\User;
 use App\Users;
 
 /*
@@ -54,6 +59,12 @@ Route::get('reservas', function () {
 });
 
 
+Route::get('correo/{id}', function ($id) {
+    $cotizaciones = Cotizaciones::find($id);
+    return view('correo')
+        ->with('cotizaciones', $cotizaciones);
+});
+
 Route::get('sesion', function () {
     $tipo_usuario = Tipos_usuario::select('id', 'nombre')
         ->orderBy('nombre')->get();
@@ -80,6 +91,47 @@ Route::get('registro', function () {
         ->with('municipios', $municipios);;
 });
 
+/*
+|--------------------------------------------------------------------------
+| Rutas para la pantalla de bienvenida.
+|--------------------------------------------------------------------------
+*/
+Route::get('bienvenida/{id}', function ($id) {
+    $usuario = Users::find($id);
+    $tarjetas = Tarjetas_cliente::select()
+        ->where('id_usuario', $id)
+        ->where('status', 1)
+        ->get();
+    return view('bienvenida')
+        ->with('usuario', $usuario)
+        ->with('tarjetas', $tarjetas);
+});
+
+/*
+|--------------------------------------------------------------------------
+| Rutas para agregar una tarjeta por usuario.
+|--------------------------------------------------------------------------
+*/
+Route::get('agregar_tarjeta/{id}', function ($id) {
+    $usuario = Users::find($id);
+    $tipos_banco = Tipos_banco::select('id', 'nombre')
+        ->orderBy('nombre')->get();
+    $tipos_consorcio = Tipos_consorcio::select('id', 'nombre')
+        ->orderBy('nombre')->get();
+    return view('agregar_tarjeta')
+        ->with('usuario', $usuario)
+        ->with('tipos_banco', $tipos_banco)
+        ->with('tipos_consorcio', $tipos_consorcio);;
+});
+
+/*
+|--------------------------------------------------------------------------
+| Rutas para el correo electrónico.
+|--------------------------------------------------------------------------
+*/
+Route::get('form_mail/{id}', 'CorreoController@create');
+Route::post('enviar_correo', 'CorreoController@enviar');
+//Fin correo electrónico.//
 
 /*
 |--------------------------------------------------------------------------
