@@ -1,5 +1,27 @@
 @extends('templates.master')
 @section('contenido_central')
+    <!-- AJAX para llenar el combo de municipios: -->
+    <script>
+        function llenar_municipios(id_entidad) {
+            $("#id_municipio").empty();
+            var asset = "{{ asset('') }}";
+            var ruta = asset + 'combo_municipios_x_entidad/' + id_entidad;
+            $.ajax({
+                type: 'GET',
+                url: ruta,
+                success: function(data) {
+                    var municipios = data;
+                    for (var i = 0; i < municipios.length; i++) {
+                        $('#id_municipio').append('<option value="' + municipios[i].id + '">' +
+                            municipios[i].nombre + '</option>'); 
+                    }
+                }
+            });
+        }
+
+    </script>
+    <!--Fin Script AJAX-->
+
     <section class="hero-wrap hero-wrap-2" style="background-image: url('{!!  asset('estilo/images/sesion2.jpg') !!}');"
         data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
@@ -81,7 +103,8 @@
             <td>
                 {!! Form::label('id_entidad', 'Entidad') !!}<br>
                 {!! Form::select('id_entidad', $entidades->pluck('nombre', 'id')->all(), null, ['placeholder' =>
-                'Seleccionar ...', 'class' => 'form-control', 'required']) !!}
+                'Seleccionar ...', 'class' => 'form-control', 'required', 'onchange' => 'llenar_municipios(this.value);'])
+                !!}
             </td>
             <td colspan="2">
                 {!! Form::label('id_municipio', 'Municipio') !!}<br>

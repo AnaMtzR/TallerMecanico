@@ -1,5 +1,26 @@
 @extends('templates.master')
 @section('contenido_central')
+    <!-- AJAX para llenar el combo de municipios: -->
+    <script>
+        function llenar_municipios(id_entidad) {
+            $("#id_municipio").empty();
+            var asset = "{{ asset('') }}";
+            var ruta = asset + 'combo_municipios_x_entidad/' + id_entidad;
+            $.ajax({
+                type: 'GET',
+                url: ruta,
+                success: function(data) {
+                    var municipios = data;
+                    for (var i = 0; i < municipios.length; i++) {
+                        $('#id_municipio').append('<option value="' + municipios[i].id + '">' +
+                            municipios[i].nombre + '</option>');
+                    }
+                }
+            });
+        }
+
+    </script>
+    <!--Fin Script AJAX-->
     <h1 align="center">Agregar nuevo usuario</h1>
 @endsection()
 @section('contenido_central2')
@@ -26,13 +47,17 @@
             <td>
 
                 {!! Form::label('edad', 'Edad') !!}<br>
-                {!! Form::number('edad', '18', ['placeholder' => 'Ingresa tu edad', 'class' => 'form-control', 'required'])
+                {!! Form::number('edad', null, ['placeholder' => 'Ingresa tu edad', 'class' => 'form-control', 'required'])
                 !!}
             </td>
             <td>
                 {!! Form::label('genero', 'Genero') !!}<br>
-                {!! Form::select('genero', ['M' => 'Masculino', 'F' => 'Femenino'], 'null', ['placeholder' => 'Selecciona
-                genero', 'class' => 'form-control', 'required']) !!}
+                {!! Form::select('genero', ['M' => 'Masculino', 'F' => 'Femenino'], 'null', [
+                'placeholder' => 'Selecciona
+                genero',
+                'class' => 'form-control',
+                'required',
+                ]) !!}
             </td>
         </tr>
     </table>
@@ -62,7 +87,8 @@
             <td>
                 {!! Form::label('id_entidad', 'Entidad') !!}<br>
                 {!! Form::select('id_entidad', $entidades->pluck('nombre', 'id')->all(), null, ['placeholder' =>
-                'Seleccionar ...', 'class' => 'form-control', 'required']) !!}
+                'Seleccionar ...', 'class' => 'form-control', 'required', 'onchange' => 'llenar_municipios(this.value);'])
+                !!}
             </td>
             <td colspan="2">
                 {!! Form::label('id_municipio', 'Municipio') !!}<br>

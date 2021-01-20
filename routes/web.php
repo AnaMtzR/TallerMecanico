@@ -135,6 +135,13 @@ Route::post('enviar_correo', 'CorreoController@enviar');
 
 /*
 |--------------------------------------------------------------------------
+| Rutas para la pantalla de bienvenida.
+|--------------------------------------------------------------------------
+*/
+Route::get('combo_municipios_x_entidad/{id_entidad}', 'AjaxController@combo_municipios');
+
+/*
+|--------------------------------------------------------------------------
 | Resources Controllers para tablas de CRUD's
 |--------------------------------------------------------------------------
 */
