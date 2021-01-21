@@ -81,6 +81,19 @@ class Cotizaciones_Controller extends Controller
 
     }
 
+     /**
+     * Se va a invocar la vista de los correos.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function correo($id)
+    {
+        $cotizaciones = Cotizaciones::find($id);
+        return view('correo')
+            ->with('cotizaciones', $cotizaciones);
+    }
+
     /**
      * Update the specified resource in storage.
      *

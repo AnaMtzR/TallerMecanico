@@ -55,7 +55,7 @@ class Tarjetas_cliente_Controller extends Controller
         $datos = $request->all();
         tarjetas_cliente::create($datos);
 
-        return redirect('/tarjetas_cliente');
+        return redirect('inicio');
     }
 
     /**
